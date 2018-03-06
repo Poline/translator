@@ -31,18 +31,18 @@ class WordsList extends React.Component{
   }
 
   clickOnConfirmButton(index){
-    const transtation = this.newWordTranslation.value;
+    const translation = this.newWordTranslation.value;
 
-    if (transtation.length > 0){
+    if (translation.length > 0){
       this.closeErrorTranslationClass();
-      this.changeTranslation(index, transtation);
+      this.changeTranslation(index, translation);
     } else{
       this.openErrorTranslationClass();
     }
   }
 
-  changeTranslation(index, transtation){
-    this.props.dispatch(changeTranslation(index, transtation));
+  changeTranslation(index, translation){
+    this.props.dispatch(changeTranslation(index, translation));
     this.closeEditElement();
     this.closeErrorTranslationClass();
   }
@@ -66,7 +66,7 @@ class WordsList extends React.Component{
           return(
             <div key={`word-${wordIndex}`} className='word-element'>
               <span className='word-element__word'> {word.word} </span>
-              <span className='word-element__transtate'> {word.transtation} </span>
+              <span className='word-element__transtate'> {word.translation} </span>
               <span className="word-element__edit" onClick={()=> this.openEditElement(wordIndex)}>Edit</span>
               {editElement === wordIndex &&
                 <div className='word-element__edit-block'>

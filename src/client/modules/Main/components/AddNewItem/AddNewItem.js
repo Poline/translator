@@ -45,7 +45,7 @@ class AddNewItem extends React.Component{
       words: this.props.data.words.push(
         {
           word: newWord,
-          transtation: newWordTranslation,
+          translation: newWordTranslation,
         }
       ),
     }));
@@ -70,8 +70,14 @@ class AddNewItem extends React.Component{
     return(
       <div className="add-new-item">
         <h3> Add new word </h3>
-        <input className={newWordInputError && 'add-new-item__input-error'} ref={(elem) => this.newWord = elem} />
-        <input className={newWordTranslationInputError && 'add-new-item__input-error'} ref={(elem) => this.newWordTranslation = elem} />
+        <input placeholder='Word'
+          className={newWordInputError && 'add-new-item__input-error'}
+          ref={(elem) => this.newWord = elem}
+        />
+        <input placeholder='Translation'
+          className={newWordTranslationInputError && 'add-new-item__input-error'}
+          ref={(elem) => this.newWordTranslation = elem}
+        />
         <button onClick={this.clickOnConfirmButton}> Confirm </button>
       </div>
     )

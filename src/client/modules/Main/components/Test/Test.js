@@ -119,15 +119,15 @@ class Test extends React.Component{
     } else {
       return(
         <div className="test">
+          <div className="test__navigation"> {currentQuestionId + 1} вопрос из 20 </div>
           <div className="test__question">
               <div className='test__question-word'> {currentQuestion && currentQuestion.word} </div>
               {currentQuestion && currentQuestion.answers.map((answer, index) => {
                 return (
-                  <div className='test__question-answer'>
+                  <div className='test__question-answer' key={`answer${index}${answer}`}>
                     <input type="radio"
                       name="test-answer"
                       value={answer}
-                      key={`answer${index}${answer}`}
                       onChange={this.changeAnswer}
                     />
                     <span> {answer} </span>
