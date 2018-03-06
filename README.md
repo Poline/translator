@@ -1,8 +1,8 @@
-### empty-react-redux-project
+### translator project
 
-Add redux, sass.
+React + redux + scss
 
-Set up .eslintrc for my preference, add backend on koa, add proxy to 3000 port.
+You can add new words into your dictionary, edit them and pass the test.
 
 Run dev front
 ```
@@ -23,3 +23,4 @@ Run tests
 ```
 npm run test
 ```
+
