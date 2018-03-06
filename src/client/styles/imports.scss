@@ -1,7 +1,9 @@
 $active-color: #518ff5;
+$active-color-hover: #376ad7;
 $grey-color: #909090;
 $light-color: #fff;
 $danger-color: red;
+$disable-color: #ccc;
 
 @mixin input-style(){
     height: 20px;
@@ -9,9 +11,14 @@ $danger-color: red;
 }
 
 @mixin button-style(){
-    padding: 5px 10px;
+    padding: 5px 20px;
     background: $active-color;
     border: none;
     border-radius: 3px;
     color: $light-color;
+    cursor: pointer;
+
+    &:hover{
+        background: $active-color-hover;
+    }
 }

@@ -1,0 +1,28 @@
+@import '../../../../styles/imports';
+
+.test{
+    text-align: left;
+    width: 1080px;
+    margin: 0 auto;
+
+    button{
+        @include button-style();
+        font-size: 16px;
+        margin: 15px 0px 0px;
+    }
+    &__question-word,
+    &__question-answer{
+        font-size: 20px;
+    }
+    &__question-word{
+        margin: 10px 0px;
+    }
+    &__question-answer{
+        padding: 15px 0px;
+    }
+    &__results{
+        text-align: center;
+        margin: 20px;
+        font-size: 20px;
+    }
+}

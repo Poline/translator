@@ -4,6 +4,7 @@ import logo from './logo.png';
 import './Main.scss';
 import AddNewItem from './components/AddNewItem/AddNewItem';
 import WordsList from './components/WordsList/WordsList';
+import Test from './components/Test/Test';
 
 class Main extends React.Component{
   constructor (props) {
@@ -14,19 +15,34 @@ class Main extends React.Component{
     };
   }
 
+  changeModeType(newModeType){
+    this.setState({mode : newModeType});
+  }
+
   render () {
     const { mode } = this.state;
-    debugger
+    
     return(
-      <div className="Main">
-        <div className="Main-header">
-          <img src={logo} className="Main-logo" alt="logo" />
-          <h2>Dictionary</h2>
+      <div className="main">
+        <div className="main__header">
+          <img src={logo} className="main__header-logo" alt="logo" />
+          <div className="main__header-title">
+            <h2 className={mode !== 'dictionary' && 'main__mode-disable'}
+              onClick={()=>{this.changeModeType('dictionary')}}
+            >
+              Dictionary
+            </h2>
+            <h2 className={mode === 'dictionary' && 'main__mode-disable'}
+              onClick={()=>{this.changeModeType('test')}}
+            >
+              Test
+            </h2>
+          </div>
         </div>
         
         {mode === 'dictionary' && <AddNewItem />}
         {mode === 'dictionary' && <WordsList />}
-
+        {mode === 'test' && <Test />}
       </div>
     )
   }

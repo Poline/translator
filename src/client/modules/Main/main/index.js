@@ -7,7 +7,7 @@ export default function reducer(state = defaultState, action = {}) {
   let newState = state;
   switch (action.type) {
     case CHANGE_TRANSLATION:
-      newState.words[action.payload.index].transtation = action.payload.transtation;
+      newState.words[action.payload.index].translation = action.payload.translation;
     break;
     case ADD_NEW_WORD:
       newState = Object.assign({}, state, action.payload);
@@ -18,12 +18,12 @@ export default function reducer(state = defaultState, action = {}) {
 }
 
 //ACTIONS
-export function changeTranslation(wordIndex, transtation) {
+export function changeTranslation(wordIndex, translation) {
   return {
     type: CHANGE_TRANSLATION,
     payload: {
       index: wordIndex,
-      transtation: transtation,
+      translation: translation,
     },
   };
 }
@@ -38,63 +38,63 @@ export function addNewWord(word) {
 const defaultState = {
   words: [{
     word: 'Hello',
-    transtation: 'Привет',
+    translation: 'Привет',
   },{
     word: 'Mother',
-    transtation: 'Мама',
+    translation: 'Мама',
   },{
     word: 'Father',
-    transtation: 'Папа',
+    translation: 'Папа',
   },{
     word: 'Brother',
-    transtation: 'Брат',
+    translation: 'Брат',
   },{
     word: 'Sister',
-    transtation: 'Сестра',
+    translation: 'Сестра',
   },{
     word: 'Dog',
-    transtation: 'Собака',
+    translation: 'Собака',
   },{
     word: 'Cat',
-    transtation: 'Кошка',
+    translation: 'Кошка',
   },{
     word: 'Game',
-    transtation: 'Игра',
+    translation: 'Игра',
   },{
     word: 'Computer',
-    transtation: 'Компьютер',
+    translation: 'Компьютер',
   },{
     word: 'Mouse',
-    transtation: 'Мышь',
+    translation: 'Мышь',
   },{
     word: 'Go',
-    transtation: 'Идти',
+    translation: 'Идти',
   },{
     word: 'Do',
-    transtation: 'Делать',
+    translation: 'Делать',
   },{
     word: 'Butter',
-    transtation: 'Масло',
+    translation: 'Масло',
   },{
     word: 'Spoon',
-    transtation: 'Ложка',
+    translation: 'Ложка',
   },{
     word: 'Click',
-    transtation: 'Клик',
+    translation: 'Клик',
   },{
     word: 'Tea',
-    transtation: 'Чай',
+    translation: 'Чай',
   },{
     word: 'Coffee',
-    transtation: 'Кофе',
+    translation: 'Кофе',
   },{
     word: 'Water',
-    transtation: 'Вода',
+    translation: 'Вода',
   },{
     word: 'Bottle',
-    transtation: 'Бутылка',
+    translation: 'Бутылка',
   },{
     word: 'Black',
-    transtation: 'Черный',
+    translation: 'Черный',
   }],
 };
