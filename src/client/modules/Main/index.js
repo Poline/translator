@@ -1,35 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './Main.scss';
-import { getMessage } from './main';
+import AddNewItem from './components/AddNewItem/AddNewItem';
+import WordsList from './components/WordsList/WordsList';
 
 class Main extends React.Component{
   constructor (props) {
     super(props)
 
-    this.getMessage = this.getMessage.bind(this)
-  }
-
-  getMessage(){
-    this.props.dispatch(getMessage(this.name.value));
+    this.state = {
+      mode : 'dictionary',
+    };
   }
 
   render () {
-    const { message } = this.props.data;
+    const { mode } = this.state;
+    debugger
     return(
       <div className="Main">
         <div className="Main-header">
           <img src={logo} className="Main-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Dictionary</h2>
         </div>
-        <p className="Main-intro">What is your name?</p>
+        
+        {mode === 'dictionary' && <AddNewItem />}
+        {mode === 'dictionary' && <WordsList />}
 
-        <input ref={(inputEl) => this.name = inputEl} type='text' placeholder='Place your name' />
-
-        <button onClick={this.getMessage}>Hello!</button>
-
-        <p>{message}</p>
       </div>
     )
   }

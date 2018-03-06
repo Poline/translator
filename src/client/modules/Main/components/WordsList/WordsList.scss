@@ -1,0 +1,43 @@
+@import '../../../../styles/imports';
+
+.words-list{
+    text-align: left;
+    width: 1080px;
+    margin: 0 auto;
+
+    .word-element{
+        display: flex;
+        padding: 10px 0px;
+        min-height: 25px;
+
+        &__word,
+        &__transtate{
+            min-width: 100px;
+            margin: auto 0;
+        }
+        &__transtate{
+            color: $grey-color;
+        }
+        &__edit{
+            color: $active-color;
+            font-size: 12px;
+            cursor: pointer;
+            margin: auto 0;
+        }
+        &__edit-block{
+            margin-left: 15px;
+
+            input{
+                @include input-style();
+            }
+            
+            button{
+                @include button-style();
+                margin-left: 15px;
+            }
+        }
+        &__edit-block-input-error{
+            border-color: $danger-color;
+        }
+    }
+}

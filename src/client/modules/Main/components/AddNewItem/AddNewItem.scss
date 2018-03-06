@@ -1,0 +1,20 @@
+@import '../../../../styles/imports';
+
+.add-new-item{
+    text-align: left;
+    width: 1080px;
+    margin: 0 auto;
+
+    input{
+        @include input-style();
+        margin-right: 15px;
+    }
+    
+    button{
+        @include button-style();
+    }
+
+    &__input-error{
+        border-color: $danger-color;
+    }
+}

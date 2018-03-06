@@ -1,0 +1,17 @@
+$active-color: #518ff5;
+$grey-color: #909090;
+$light-color: #fff;
+$danger-color: red;
+
+@mixin input-style(){
+    height: 20px;
+    padding: 0px 10px;
+}
+
+@mixin button-style(){
+    padding: 5px 10px;
+    background: $active-color;
+    border: none;
+    border-radius: 3px;
+    color: $light-color;
+}

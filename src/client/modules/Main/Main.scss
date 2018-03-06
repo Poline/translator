@@ -16,23 +16,4 @@
   .Main-intro {
     font-size: large;
   }
-  input{
-    height: 30px;
-    padding: 0px 10px;
-  }
-
-  button{
-    height: 30px;
-    margin-left: 15px;
-    width: 75px;
-    background: #5ed0f0;
-    border: none;
-    border-radius: 3px;
-  }
-
-  
-  @keyframes Main-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
 }
