@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';

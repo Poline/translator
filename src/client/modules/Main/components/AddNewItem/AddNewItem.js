@@ -13,12 +13,13 @@ class AddNewItem extends React.Component{
     this.state = {
       newWordInputError : false,
       newWordTranslationInputError : false,
+      newWord: '',
+      newWordTranslation: '',
     };
   }
 
   clickOnConfirmButton(){
-    const newWord = this.newWord.value,
-      newWordTranslation = this.newWordTranslation.value;
+    const {newWord, newWordTranslation} = this.state;
     let addWord = true;
 
     if (newWord.length === 0){
@@ -55,28 +56,34 @@ class AddNewItem extends React.Component{
   }
 
   closeErrors(){
-    this.setState({newWordInputError: false});
-    this.setState({newWordTranslationInputError: false});
+    this.setState({
+      newWordInputError: false,
+      newWordTranslationInputError: false,
+    });
   }
 
   cleanInputs(){
-    this.newWord.value = '';
-    this.newWordTranslation.value = '';
+    this.setState({
+      newWord: '',
+      newWordTranslation: '',
+    })
   }
 
   render () {
-    const { newWordTranslationInputError, newWordInputError } = this.state;
+    const { newWordTranslationInputError, newWordInputError, newWord, newWordTranslation } = this.state;
 
     return(
       <div className="add-new-item">
         <h3> Add new word </h3>
         <input placeholder='Word'
+          value={newWord}
           className={newWordInputError && 'add-new-item__input-error'}
-          ref={(elem) => this.newWord = elem}
+          onChange={(event)=>{this.setState({newWord: event.currentTarget.value})}}
         />
         <input placeholder='Translation'
+          value={newWordTranslation}
           className={newWordTranslationInputError && 'add-new-item__input-error'}
-          ref={(elem) => this.newWordTranslation = elem}
+          onChange={(event)=>{this.setState({newWordTranslation: event.currentTarget.value})}}
         />
         <button onClick={this.clickOnConfirmButton}> Confirm </button>
       </div>
